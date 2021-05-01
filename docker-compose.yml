@@ -1,0 +1,31 @@
+version: '3'
+services:
+  nginx:
+    container_name: magento2-custom-nginx
+    image: eterlabs/nginx-php74
+    volumes:
+      - ./code:/var/www/html:delegated
+      - ./config/nginx.conf:/etc/nginx/conf.d/default.conf:cached
+      - ./config/php.ini:/etc/php/7.4/fpm/php.ini:cached
+      - ./config/auth.json:/root/.config/composer/auth.json
+    ports:
+      - 8071:80
+    extra_hosts:
+      - "host.docker.local:host-gateway"
+    links:
+      - elasticsearch
+
+  elasticsearch:
+    image: elasticsearch:7.12.0
+    container_name: magento2-custom-elasticsearch
+    environment:
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - ./esdata1:/usr/share/elasticsearch/data
+    ports:
+      - 9210:9200

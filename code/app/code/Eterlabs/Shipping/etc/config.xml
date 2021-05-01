@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+/**
+ * @author    Erick Garcia <erick@eterlabs.com>
+ * @copyright  Copyright (c) 2021 Eterlabs (https://www.eterlabs.com)
+ * @link       https://www.eterlabs.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Store/etc/config.xsd">
+    <default>
+        <carriers>
+            <eterlabs_shipping>
+                <active>0</active>
+                <model>Eterlabs\Shipping\Model\Carrier\Shipping</model>
+                <title>Eterlabs Shipping</title>
+                <name>Custom Shipping</name>
+                <price>0</price>
+                <sallowspecific>0</sallowspecific>
+                <specificerrmsg>This shipping method is not available. Please contact us, to use this method.</specificerrmsg>
+            </eterlabs_shipping>
+        </carriers>
+    </default>
+</config>

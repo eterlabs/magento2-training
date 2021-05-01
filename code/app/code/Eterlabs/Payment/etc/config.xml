@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @author    Eduardo Garcia <eduardo@eterlabs.com>
+ * @copyright  Copyright (c) 2021 Eterlabs (https://www.eterlabs.com)
+ * @link       https://www.eterlabs.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <default>
+        <payment>
+            <testpayment>
+                <payment_action>authorize</payment_action><!-- You can use another methor like capture  -->
+                <model>Eterlabs\Payment\Model\PaymentMethod</model>
+                <active>1</active>
+                <title>Test Payment</title>
+                <order_status>pending_payment</order_status><!-- set default order status-->
+            </testpayment>
+        </payment>
+    </default>
+</config>
