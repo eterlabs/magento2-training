@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-docker exec magento2-custom-nginx grunt  "$@";
+docker exec magento2-training-nginx grunt  "$@";

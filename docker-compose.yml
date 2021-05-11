@@ -1,7 +1,7 @@
 version: '3'
 services:
   nginx:
-    container_name: magento2-custom-nginx
+    container_name: magento2-training-nginx
     image: eterlabs/nginx-php74
     volumes:
       - ./code:/var/www/html:delegated
@@ -14,10 +14,21 @@ services:
       - "host.docker.local:host-gateway"
     links:
       - elasticsearch
+      - mariadb
+
+  mariadb:
+    image: mariadb:10.2
+    restart: always
+    container_name: magento2-training-mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: magento2
+      MYSQL_USER: magento
+      MYSQL_PASSWORD: magentopass
 
   elasticsearch:
     image: elasticsearch:7.12.0
-    container_name: magento2-custom-elasticsearch
+    container_name: magento2-training-elasticsearch
     environment:
       - discovery.type=single-node
       - bootstrap.memory_lock=true
