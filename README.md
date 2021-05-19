@@ -19,8 +19,6 @@ Para usar este repositorio sigue los siguientes pasos:
 #### Requerimiento Previos
 
 * Instalar Docker
-* Instalar MySQL en máquina local
-
 
 #### Montado del proyecto
 
