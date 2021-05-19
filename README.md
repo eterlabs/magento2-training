@@ -35,17 +35,22 @@ git clone https://github.com/eterlabs/magento2-training.git
 cd magento2-training
 ```
 
-3.- Inicializa el ambiente de Docker para poder comenzar la instalación
+3.- Dar permisos a la carpeta para proceder a instalar
+```
+chmod -R 775 ./
+```
+
+4.- Inicializa el ambiente de Docker para poder comenzar la instalación
 ```
 docker-compose up -d
 ```
 
-4.- Se ejecutará el comando para instalar la version en composer
+5.- Se ejecutará el comando para instalar la version en composer
 ```
 bin/composer update
 ```
 
-5.- Ejecutamos el comando de instalación de Magento.
+6.- Ejecutamos el comando de instalación de Magento.
 ```
 bin/magento setup:install \
     --base-url="http://localhost:8071/"  \
@@ -69,12 +74,12 @@ bin/magento setup:install \
     --elasticsearch-port=9200
 ```
 
-6.- Cuando la instalación termine será necesario reiniciar nginx para cargar la configuración de Magento
+7.- Cuando la instalación termine será necesario reiniciar nginx para cargar la configuración de Magento
 ```
 docker exec -ti magento2-training-nginx service nginx restart
 ```
 
-7.- Con todos estos pasos estarás listo para ver un Magento 2.4 corriendo en tu máquina
+8.- Con todos estos pasos estarás listo para ver un Magento 2.4 corriendo en tu máquina
 ```
 http://localhost:8071
 ```
