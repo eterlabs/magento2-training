@@ -9,7 +9,7 @@ services:
       - ./config/php.ini:/etc/php/7.4/fpm/php.ini:cached
       - ./config/auth.json:/root/.config/composer/auth.json
     ports:
-      - 8071:80
+      - 8070:80
     extra_hosts:
       - "host.docker.local:host-gateway"
     links:
@@ -31,7 +31,7 @@ services:
     image: phpmyadmin
     restart: always
     ports:
-      - 6071:80
+      - 6070:80
     environment:
       - PMA_HOST=mariadb
     links:
